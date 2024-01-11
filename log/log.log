@@ -1,0 +1,21 @@
+{"level":"error","message":"Data not found.Users not found/users404127.0.0.1","timestamp":"20:07:00 11-01-2024"}
+{"level":"error","message":"Invalid request.[Error 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`tesbackenddbo`.`users`, CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE)]/users400127.0.0.1","timestamp":"20:08:16 11-01-2024"}
+{"level":"info","message":"Successfully created new data./users201127.0.0.1","timestamp":"20:09:40 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getwithpaginateandsearch200127.0.0.1","timestamp":"20:16:32 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getwithpaginateandsearch200127.0.0.1","timestamp":"20:18:57 11-01-2024"}
+{"level":"error","message":"Data not found.Users not found/api/tesbebdo/v1/users/getwithpaginateandsearch404127.0.0.1","timestamp":"20:19:00 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getwithpaginateandsearch200127.0.0.1","timestamp":"20:19:04 11-01-2024"}
+{"level":"info","message":"Successfully created new data./api/tesbebdo/v1/users/insert201127.0.0.1","timestamp":"20:21:19 11-01-2024"}
+{"level":"info","message":"Successfully created new data./api/tesbebdo/v1/users/insert201127.0.0.1","timestamp":"20:21:31 11-01-2024"}
+{"level":"error","message":"Failed to update data.[Error 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`tesbackenddbo`.`users`, CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE)]/api/tesbebdo/v1/users/update/4400127.0.0.1","timestamp":"20:23:59 11-01-2024"}
+{"level":"info","message":"Successfully updated data./api/tesbebdo/v1/users/update/4200127.0.0.1","timestamp":"20:26:04 11-01-2024"}
+{"level":"info","message":"Successfully updated data./api/tesbebdo/v1/users/update/4200127.0.0.1","timestamp":"20:26:57 11-01-2024"}
+{"level":"error","message":"Failed to update data.[Error 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`tesbackenddbo`.`users`, CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE)]/api/tesbebdo/v1/users/update/4400127.0.0.1","timestamp":"20:27:05 11-01-2024"}
+{"level":"info","message":"Successfully updated data./api/tesbebdo/v1/users/update/4200127.0.0.1","timestamp":"20:27:35 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getdetail/4200127.0.0.1","timestamp":"20:28:19 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getdetail/3200127.0.0.1","timestamp":"20:28:27 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getdetail/2200127.0.0.1","timestamp":"20:28:30 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getwithpaginateandsearch200127.0.0.1","timestamp":"20:28:34 11-01-2024"}
+{"level":"error","message":"Data not found.Users not found/api/tesbebdo/v1/users/getwithpaginateandsearch404127.0.0.1","timestamp":"20:28:41 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getwithpaginateandsearch200127.0.0.1","timestamp":"20:28:49 11-01-2024"}
+{"level":"info","message":"Successfully deleted data./api/tesbebdo/v1/users/delete/4200127.0.0.1","timestamp":"20:30:20 11-01-2024"}

@@ -1,15 +1,22 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+
+	"github.com/aditya3232/tes-backend-dbo/config"
+	"github.com/aditya3232/tes-backend-dbo/helper"
+	"github.com/aditya3232/tes-backend-dbo/routes"
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	r := gin.Default()
+	defer helper.RecoverPanic()
 
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "Pong",
-		})
-	})
+	router := gin.Default()
+	if config.CONFIG.DEBUG == 0 {
+		gin.SetMode(gin.ReleaseMode)
+	}
 
-	r.Run()
+	routes.Initialize(router)
+	router.Run(fmt.Sprintf("%s:%s", config.CONFIG.APP_HOST, config.CONFIG.APP_PORT))
 }

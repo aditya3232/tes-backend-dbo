@@ -5,7 +5,7 @@ WORKDIR /app
 COPY go.mod .
 COPY main.go .
 
-RUN go get
+RUN go get -d -v ./...
 RUN go build -o bin .
 
 ENTRYPOINT [ "/app/bin" ]
