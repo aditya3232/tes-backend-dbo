@@ -15,7 +15,7 @@ func Initialize(router *gin.Engine) {
 
 	// Initialize services
 	usersService := users.NewService(usersRepository)
-	customersService := customers.NewService(customersRepository)
+	customersService := customers.NewService(customersRepository, usersRepository)
 
 	// Initialize handlers
 	UsersController := controllers.NewUsersController(usersService)
