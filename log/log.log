@@ -88,3 +88,8 @@
 {"level":"info","message":"Successfully created new data./api/tesbedbo/v1/users/insert201127.0.0.1","timestamp":"10:13:57 12-01-2024"}
 {"level":"info","message":"Login success./api/tesbedbo/v1/auth/login200127.0.0.1","timestamp":"10:15:40 12-01-2024"}
 {"level":"info","message":"Data found./api/tesbedbo/v1/customers/getwithpaginateandsearch200127.0.0.1","timestamp":"10:16:14 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbedbo/v1/customers/getwithpaginateandsearch200127.0.0.1","timestamp":"10:17:18 12-01-2024"}
+{"level":"info","message":"Logout success./api/tesbedbo/v1/auth/logout200127.0.0.1","timestamp":"10:17:33 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbedbo/v1/users/getwithpaginateandsearch200127.0.0.1","timestamp":"10:26:54 12-01-2024"}
+{"level":"info","message":"Successfully created new data./api/tesbedbo/v1/users/insert201127.0.0.1","timestamp":"10:27:10 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbedbo/v1/users/getdetail/10200127.0.0.1","timestamp":"10:27:44 12-01-2024"}

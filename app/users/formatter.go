@@ -4,7 +4,6 @@ import "time"
 
 type UsersGetFormatter struct {
 	ID        int        `json:"id"`
-	RoleID    *int       `json:"role_id"`
 	Username  string     `json:"username"`
 	CreatedAt *time.Time `json:"created_at"`
 	UpdatedAt *time.Time `json:"updated_at"`
@@ -12,7 +11,6 @@ type UsersGetFormatter struct {
 
 type UsersCreateFormatter struct {
 	ID        int        `json:"id"`
-	RoleID    *int       `json:"role_id"`
 	Username  string     `json:"username"`
 	Password  string     `json:"password"`
 	CreatedAt *time.Time `json:"created_at"`
@@ -21,7 +19,6 @@ type UsersCreateFormatter struct {
 
 type UsersUpdateFormatter struct {
 	ID        int        `json:"id"`
-	RoleID    *int       `json:"role_id"`
 	Password  string     `json:"password"`
 	CreatedAt *time.Time `json:"created_at"`
 	UpdatedAt *time.Time `json:"updated_at"`
@@ -31,7 +28,6 @@ func UsersCreateFormat(users Users) UsersCreateFormatter {
 	var formatter UsersCreateFormatter
 
 	formatter.ID = users.ID
-	formatter.RoleID = users.RoleID
 	formatter.Username = users.Username
 	formatter.Password = users.Password
 	formatter.CreatedAt = users.CreatedAt
@@ -44,7 +40,6 @@ func UsersUpdateFormat(users Users) UsersUpdateFormatter {
 	var formatter UsersUpdateFormatter
 
 	formatter.ID = users.ID
-	formatter.RoleID = users.RoleID
 	formatter.Password = users.Password
 	formatter.CreatedAt = users.CreatedAt
 	formatter.UpdatedAt = users.UpdatedAt
@@ -56,7 +51,6 @@ func UsersGetFormat(users Users) UsersGetFormatter {
 	var formatter UsersGetFormatter
 
 	formatter.ID = users.ID
-	formatter.RoleID = users.RoleID
 	formatter.Username = users.Username
 	formatter.CreatedAt = users.CreatedAt
 	formatter.UpdatedAt = users.UpdatedAt

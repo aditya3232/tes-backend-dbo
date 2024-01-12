@@ -47,11 +47,6 @@ func (s *service) Create(input UsersInput) (Users, error) {
 		return Users{}, errors.New("username must unique")
 	}
 
-	if input.RoleID == nil || *input.RoleID == 0 {
-		roleID := 34
-		input.RoleID = &roleID
-	}
-
 	if input.Password != "" {
 		password, err := bcrypt.GenerateFromPassword([]byte(input.Password), bcrypt.MinCost)
 		if err != nil {
@@ -62,7 +57,6 @@ func (s *service) Create(input UsersInput) (Users, error) {
 	}
 
 	user := Users{
-		RoleID:   input.RoleID,
 		Username: input.Username,
 		Password: input.Password,
 	}
@@ -81,11 +75,6 @@ func (s *service) Update(input UsersUpdateInput) (Users, error) {
 		return Users{}, err
 	}
 
-	// if roleID == nil || *roleID == 0, then dont update roleID to default int value 0
-	if input.RoleID == nil || *input.RoleID == 0 {
-		input.RoleID = nil
-	}
-
 	if input.Password != "" {
 		password, err := bcrypt.GenerateFromPassword([]byte(input.Password), bcrypt.MinCost)
 		if err != nil {
@@ -97,7 +86,6 @@ func (s *service) Update(input UsersUpdateInput) (Users, error) {
 
 	user := Users{
 		ID:            input.ID,
-		RoleID:        input.RoleID,
 		Password:      input.Password,
 		RememberToken: input.RememberToken, // dari login
 	}
