@@ -3,7 +3,6 @@ package customers
 import (
 	"errors"
 
-	"github.com/aditya3232/tes-backend-dbo/app/users"
 	"github.com/aditya3232/tes-backend-dbo/helper"
 )
 
@@ -17,11 +16,10 @@ type Service interface {
 
 type service struct {
 	customersRepository Repository
-	userRepository      users.Repository // for checking user_id
 }
 
-func NewService(customersRepository Repository, userRepository users.Repository) *service {
-	return &service{customersRepository, userRepository}
+func NewService(customersRepository Repository) *service {
+	return &service{customersRepository}
 }
 
 func (s *service) GetAll(filter map[string]string, pagination helper.Pagination, sort helper.Sort) ([]Customers, helper.Pagination, error) {
@@ -48,7 +46,7 @@ func (s *service) Create(input CustomersInput) (Customers, error) {
 		return Customers{}, errors.New("email must unique")
 	}
 
-	_, err = s.userRepository.GetOne(*input.UserID)
+	_, err = s.customersRepository.GetByUserID(*input.UserID)
 	if err == nil {
 		return Customers{}, errors.New("user must unique")
 	}
@@ -83,7 +81,7 @@ func (s *service) Update(input CustomersUpdateInput) (Customers, error) {
 		return Customers{}, errors.New("email must unique")
 	}
 
-	_, err = s.userRepository.GetOne(*input.UserID)
+	_, err = s.customersRepository.GetByUserID(*input.UserID)
 	if err == nil {
 		return Customers{}, errors.New("user must unique")
 	}

@@ -12,6 +12,7 @@ type Repository interface {
 	Update(Customers) (Customers, error)
 	Delete(id int) error
 	GetByEmail(email string) (Customers, error) // for check unique email
+	GetByUserID(userID int) (Customers, error)  // for check unique user_id
 }
 
 type repository struct {
@@ -95,6 +96,17 @@ func (r *repository) GetByEmail(email string) (Customers, error) {
 	var customers Customers
 
 	err := r.db.Where("email = ?", email).First(&customers).Error
+	if err != nil {
+		return customers, err
+	}
+
+	return customers, nil
+}
+
+func (r *repository) GetByUserID(userID int) (Customers, error) {
+	var customers Customers
+
+	err := r.db.Where("user_id = ?", userID).First(&customers).Error
 	if err != nil {
 		return customers, err
 	}

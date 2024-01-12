@@ -99,3 +99,20 @@
 {"level":"error","message":"Login failed.[crypto/bcrypt: hashedPassword is not the hash of the given password]/api/tesbedbo/v1/auth/login400127.0.0.1","timestamp":"10:57:05 12-01-2024"}
 {"level":"info","message":"Login success./api/tesbedbo/v1/auth/login200127.0.0.1","timestamp":"10:57:09 12-01-2024"}
 {"level":"info","message":"Data found./api/tesbedbo/v1/logindata/getlogindata200127.0.0.1","timestamp":"10:57:16 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbedbo/v1/customers/getwithpaginateandsearch200127.0.0.1","timestamp":"10:59:48 12-01-2024"}
+{"level":"info","message":"Login success./api/tesbedbo/v1/auth/login200127.0.0.1","timestamp":"13:16:45 12-01-2024"}
+{"level":"error","message":"Data not found.[record not found]/api/tesbedbo/v1/customers/getdetail/3404127.0.0.1","timestamp":"13:16:56 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbedbo/v1/customers/getdetail/9200127.0.0.1","timestamp":"13:17:04 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbedbo/v1/customers/getwithpaginateandsearch200127.0.0.1","timestamp":"13:19:04 12-01-2024"}
+{"level":"error","message":"Invalid request.[user must unique]/api/tesbedbo/v1/customers/insert400127.0.0.1","timestamp":"13:21:53 12-01-2024"}
+{"level":"error","message":"Invalid request.[user must unique]/api/tesbedbo/v1/customers/insert400127.0.0.1","timestamp":"13:22:18 12-01-2024"}
+{"level":"info","message":"Successfully created new data./api/tesbedbo/v1/customers/insert201127.0.0.1","timestamp":"13:24:43 12-01-2024"}
+{"level":"error","message":"Invalid request.[email must unique]/api/tesbedbo/v1/customers/insert400127.0.0.1","timestamp":"13:24:47 12-01-2024"}
+{"level":"error","message":"Invalid request.[email must unique]/api/tesbedbo/v1/customers/insert400127.0.0.1","timestamp":"13:25:27 12-01-2024"}
+{"level":"info","message":"Successfully created new data./api/tesbedbo/v1/customers/insert201127.0.0.1","timestamp":"13:25:58 12-01-2024"}
+{"level":"info","message":"Successfully updated data./api/tesbedbo/v1/customers/update/13200127.0.0.1","timestamp":"13:26:56 12-01-2024"}
+{"level":"info","message":"Successfully deleted data./api/tesbedbo/v1/customers/delete/13200127.0.0.1","timestamp":"13:28:44 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbedbo/v1/orders/getwithpaginateandsearch200127.0.0.1","timestamp":"13:30:51 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbedbo/v1/orders/getdetail/2200127.0.0.1","timestamp":"13:32:12 12-01-2024"}
+{"level":"info","message":"Successfully created new data./api/tesbedbo/v1/orders/insert201127.0.0.1","timestamp":"13:35:03 12-01-2024"}
+{"level":"info","message":"Successfully created new data./api/tesbedbo/v1/users/insert201127.0.0.1","timestamp":"13:42:19 12-01-2024"}

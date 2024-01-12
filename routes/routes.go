@@ -20,7 +20,7 @@ func Initialize(router *gin.Engine) {
 
 	// Initialize services
 	usersService := users.NewService(usersRepository)
-	customersService := customers.NewService(customersRepository, usersRepository)
+	customersService := customers.NewService(customersRepository)
 	ordersService := orders.NewService(ordersRepository)
 	authService := auth.NewService(usersRepository)
 	logindataService := logindata.NewService(usersRepository)
