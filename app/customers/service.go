@@ -32,9 +32,7 @@ func (s *service) GetAll(filter map[string]string, pagination helper.Pagination,
 }
 
 func (s *service) GetOne(input CustomersGetOneByIdInput) (Customers, error) {
-	customersID := Customers{ID: input.ID}
-
-	customers, err := s.customersRepository.GetOne(customersID)
+	customers, err := s.customersRepository.GetOne(input.ID)
 	if err != nil {
 		return customers, err
 	}
@@ -43,9 +41,7 @@ func (s *service) GetOne(input CustomersGetOneByIdInput) (Customers, error) {
 }
 
 func (s *service) Create(input CustomersInput) (Customers, error) {
-	email := Customers{Email: input.Email}
-
-	_, err := s.customersRepository.GetByEmail(email)
+	_, err := s.customersRepository.GetByEmail(input.Email)
 	if err == nil {
 		return Customers{}, errors.New("email must unique")
 	}
@@ -70,16 +66,12 @@ func (s *service) Create(input CustomersInput) (Customers, error) {
 }
 
 func (s *service) Update(input CustomersUpdateInput) (Customers, error) {
-	customersID := Customers{ID: input.ID}
-
-	_, err := s.customersRepository.GetOne(customersID)
+	_, err := s.customersRepository.GetOne(input.ID)
 	if err != nil {
 		return Customers{}, err
 	}
 
-	email := Customers{Email: input.Email}
-
-	_, err = s.customersRepository.GetByEmail(email)
+	_, err = s.customersRepository.GetByEmail(input.Email)
 	if err == nil {
 		return Customers{}, errors.New("email must unique")
 	}
@@ -110,14 +102,12 @@ func (s *service) Update(input CustomersUpdateInput) (Customers, error) {
 }
 
 func (s *service) Delete(input CustomersGetOneByIdInput) error {
-	customersID := Customers{ID: input.ID}
-
-	_, err := s.customersRepository.GetOne(customersID)
+	_, err := s.customersRepository.GetOne(input.ID)
 	if err != nil {
 		return err
 	}
 
-	err = s.customersRepository.Delete(customersID)
+	err = s.customersRepository.Delete(input.ID)
 	if err != nil {
 		return err
 	}

@@ -7,11 +7,11 @@ import (
 
 type Repository interface {
 	GetAll(map[string]string, helper.Pagination, helper.Sort) ([]Customers, helper.Pagination, error)
-	GetOne(Customers) (Customers, error)
+	GetOne(id int) (Customers, error)
 	Create(Customers) (Customers, error)
 	Update(Customers) (Customers, error)
-	Delete(Customers) error
-	GetByEmail(Customers) (Customers, error) // for check unique email
+	Delete(id int) error
+	GetByEmail(email string) (Customers, error) // for check unique email
 }
 
 type repository struct {
@@ -51,8 +51,10 @@ func (r *repository) GetAll(filter map[string]string, pagination helper.Paginati
 	return customers, pagination, nil
 }
 
-func (r *repository) GetOne(customers Customers) (Customers, error) {
-	err := r.db.Where("id = ?", customers.ID).First(&customers).Error
+func (r *repository) GetOne(id int) (Customers, error) {
+	var customers Customers
+
+	err := r.db.Where("id = ?", id).First(&customers).Error
 	if err != nil {
 		return customers, err
 	}
@@ -78,8 +80,10 @@ func (r *repository) Update(customers Customers) (Customers, error) {
 	return customers, nil
 }
 
-func (r *repository) Delete(customers Customers) error {
-	err := r.db.Where("id = ?", customers.ID).Delete(&customers).Error
+func (r *repository) Delete(id int) error {
+	var customers Customers
+
+	err := r.db.Where("id = ?", id).Delete(&customers).Error
 	if err != nil {
 		return err
 	}
@@ -87,8 +91,10 @@ func (r *repository) Delete(customers Customers) error {
 	return nil
 }
 
-func (r *repository) GetByEmail(customers Customers) (Customers, error) {
-	err := r.db.Where("email = ?", customers.Email).First(&customers).Error
+func (r *repository) GetByEmail(email string) (Customers, error) {
+	var customers Customers
+
+	err := r.db.Where("email = ?", email).First(&customers).Error
 	if err != nil {
 		return customers, err
 	}

@@ -7,11 +7,11 @@ import (
 
 type Repository interface {
 	GetAll(map[string]string, helper.Pagination, helper.Sort) ([]Users, helper.Pagination, error)
-	GetOne(Users) (Users, error)
+	GetOne(id int) (Users, error) // pakai id jgn pakai model, biar bisa dipake di service lain, buat join
 	Create(Users) (Users, error)
 	Update(Users) (Users, error)
-	Delete(Users) error
-	GetUsername(Users) (Users, error) // for check unique username
+	Delete(id int) error
+	GetUsername(username string) (Users, error) // for check unique username
 }
 
 type repository struct {
@@ -51,8 +51,10 @@ func (r *repository) GetAll(filter map[string]string, pagination helper.Paginati
 	return users, pagination, nil
 }
 
-func (r *repository) GetOne(user Users) (Users, error) {
-	err := r.db.Where("id = ?", user.ID).First(&user).Error
+func (r *repository) GetOne(id int) (Users, error) {
+	var user Users
+
+	err := r.db.Where("id = ?", id).First(&user).Error
 	if err != nil {
 		return user, err
 	}
@@ -78,8 +80,10 @@ func (r *repository) Update(user Users) (Users, error) {
 	return user, nil
 }
 
-func (r *repository) Delete(user Users) error {
-	err := r.db.Where("id = ?", user.ID).Delete(&user).Error
+func (r *repository) Delete(id int) error {
+	var user Users
+
+	err := r.db.Where("id = ?", id).Delete(&user).Error
 	if err != nil {
 		return err
 	}
@@ -87,8 +91,10 @@ func (r *repository) Delete(user Users) error {
 	return nil
 }
 
-func (r *repository) GetUsername(user Users) (Users, error) {
-	err := r.db.Where("username = ?", user.Username).First(&user).Error
+func (r *repository) GetUsername(username string) (Users, error) {
+	var user Users
+
+	err := r.db.Where("username = ?", username).First(&user).Error
 	if err != nil {
 		return user, err
 	}

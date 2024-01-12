@@ -33,9 +33,7 @@ func (s *service) GetAll(filter map[string]string, pagination helper.Pagination,
 }
 
 func (s *service) GetOne(input UsersGetOneByIdInput) (Users, error) {
-	userID := Users{ID: input.ID}
-
-	user, err := s.userRepository.GetOne(userID)
+	user, err := s.userRepository.GetOne(input.ID)
 	if err != nil {
 		return user, err
 	}
@@ -44,9 +42,7 @@ func (s *service) GetOne(input UsersGetOneByIdInput) (Users, error) {
 }
 
 func (s *service) Create(input UsersInput) (Users, error) {
-	username := Users{Username: input.Username}
-
-	_, err := s.userRepository.GetUsername(username)
+	_, err := s.userRepository.GetUsername(input.Username)
 	if err == nil {
 		return Users{}, errors.New("username must unique")
 	}
@@ -80,9 +76,7 @@ func (s *service) Create(input UsersInput) (Users, error) {
 }
 
 func (s *service) Update(input UsersUpdateInput) (Users, error) {
-	userID := Users{ID: input.ID}
-
-	_, err := s.userRepository.GetOne(userID)
+	_, err := s.userRepository.GetOne(input.ID)
 	if err != nil {
 		return Users{}, err
 	}
@@ -117,14 +111,12 @@ func (s *service) Update(input UsersUpdateInput) (Users, error) {
 }
 
 func (s *service) Delete(input UsersGetOneByIdInput) error {
-	userID := Users{ID: input.ID}
-
-	_, err := s.userRepository.GetOne(userID)
+	_, err := s.userRepository.GetOne(input.ID)
 	if err != nil {
 		return err
 	}
 
-	err = s.userRepository.Delete(userID)
+	err = s.userRepository.Delete(input.ID)
 	if err != nil {
 		return err
 	}
