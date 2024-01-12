@@ -19,3 +19,27 @@
 {"level":"error","message":"Data not found.Users not found/api/tesbebdo/v1/users/getwithpaginateandsearch404127.0.0.1","timestamp":"20:28:41 11-01-2024"}
 {"level":"info","message":"Data found./api/tesbebdo/v1/users/getwithpaginateandsearch200127.0.0.1","timestamp":"20:28:49 11-01-2024"}
 {"level":"info","message":"Successfully deleted data./api/tesbebdo/v1/users/delete/4200127.0.0.1","timestamp":"20:30:20 11-01-2024"}
+{"level":"error","message":"Data not found.Users not found/api/tesbebdo/v1/users/getwithpaginateandsearch404127.0.0.1","timestamp":"21:10:42 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getwithpaginateandsearch200127.0.0.1","timestamp":"21:10:46 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getwithpaginateandsearch200127.0.0.1","timestamp":"21:21:47 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getdetail/2200127.0.0.1","timestamp":"21:21:54 11-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/users/getdetail/2200127.0.0.1","timestamp":"21:50:43 11-01-2024"}
+{"level":"error","message":"Data not found.[record not found]/api/tesbebdo/v1/users/getdetail/1404127.0.0.1","timestamp":"22:05:50 11-01-2024"}
+{"level":"error","message":"Invalid request.[Error 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`tesbackenddbo`.`customers`, CONSTRAINT `customers_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT)]/api/tesbebdo/v1/customers/insert400127.0.0.1","timestamp":"06:26:30 12-01-2024"}
+{"level":"info","message":"Successfully created new data./api/tesbebdo/v1/customers/insert201127.0.0.1","timestamp":"06:26:44 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/customers/getwithpaginateandsearch200127.0.0.1","timestamp":"06:27:39 12-01-2024"}
+{"level":"error","message":"Failed to update data.[record not found]/api/tesbebdo/v1/customers/update/4400127.0.0.1","timestamp":"06:28:59 12-01-2024"}
+{"level":"error","message":"Failed to update data.[Error 1264 (22003): Out of range value for column 'phone' at row 1]/api/tesbebdo/v1/customers/update/2400127.0.0.1","timestamp":"06:29:04 12-01-2024"}
+{"level":"error","message":"Failed to update data.[Error 1264 (22003): Out of range value for column 'phone' at row 1]/api/tesbebdo/v1/customers/update/2400127.0.0.1","timestamp":"06:30:08 12-01-2024"}
+{"level":"info","message":"Successfully updated data./api/tesbebdo/v1/customers/update/2200127.0.0.1","timestamp":"06:31:27 12-01-2024"}
+{"level":"info","message":"Successfully created new data./api/tesbebdo/v1/customers/insert201127.0.0.1","timestamp":"06:35:03 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/customers/getwithpaginateandsearch200127.0.0.1","timestamp":"06:35:16 12-01-2024"}
+{"level":"error","message":"Failed to update data.[record not found]/api/tesbebdo/v1/customers/update/2400127.0.0.1","timestamp":"06:35:23 12-01-2024"}
+{"level":"info","message":"Successfully updated data./api/tesbebdo/v1/customers/update/3200127.0.0.1","timestamp":"06:36:08 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/customers/getdetail/3200127.0.0.1","timestamp":"06:36:40 12-01-2024"}
+{"level":"info","message":"Successfully created new data./api/tesbebdo/v1/customers/insert201127.0.0.1","timestamp":"06:37:34 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/customers/getdetail/3200127.0.0.1","timestamp":"06:37:37 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/customers/getwithpaginateandsearch200127.0.0.1","timestamp":"06:37:40 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/customers/getwithpaginateandsearch200127.0.0.1","timestamp":"07:22:32 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/customers/getwithpaginateandsearch200127.0.0.1","timestamp":"07:22:41 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbebdo/v1/customers/getdetail/3200127.0.0.1","timestamp":"07:22:45 12-01-2024"}

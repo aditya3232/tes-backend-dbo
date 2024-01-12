@@ -68,8 +68,8 @@ func UsersGetAllFormat(users []Users) []UsersGetFormatter {
 	formatter := []UsersGetFormatter{}
 
 	for _, user := range users {
-		userGetFormatter := UsersGetFormat(user)
-		formatter = append(formatter, userGetFormatter)
+		usersGetFormatter := UsersGetFormat(user)
+		formatter = append(formatter, usersGetFormatter)
 	}
 
 	return formatter

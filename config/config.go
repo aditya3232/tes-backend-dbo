@@ -2,6 +2,7 @@ package config
 
 import (
 	"log"
+	"path/filepath"
 
 	"github.com/spf13/viper"
 )
@@ -26,9 +27,11 @@ type envConfigs struct {
 }
 
 func load() (config *envConfigs) {
-	viper.AddConfigPath("../tes-backend-dbo/config")
+	envPath := filepath.Join("..", "tes-backend-dbo")
 
-	viper.SetConfigName(".env")
+	viper.AddConfigPath(envPath)
+
+	viper.SetConfigName("tesbackenddbo.env")
 
 	viper.SetConfigType("env")
 
