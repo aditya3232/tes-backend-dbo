@@ -1,7 +1,7 @@
 package customers
 
 type CustomersInput struct {
-	UserID  *int   `form:"user_id"`
+	UserID  *int   `form:"user_id" binding:"required"`
 	Name    string `form:"name" binding:"required"`
 	Email   string `form:"email" binding:"required"`
 	Phone   string `form:"phone" binding:"required"`

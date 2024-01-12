@@ -83,6 +83,11 @@ func (s *service) Update(input CustomersUpdateInput) (Customers, error) {
 		return Customers{}, errors.New("email must unique")
 	}
 
+	_, err = s.userRepository.GetOne(*input.UserID)
+	if err == nil {
+		return Customers{}, errors.New("user must unique")
+	}
+
 	if input.UserID == nil || *input.UserID == 0 {
 		input.UserID = nil
 	}

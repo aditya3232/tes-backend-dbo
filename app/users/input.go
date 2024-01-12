@@ -1,7 +1,7 @@
 package users
 
 type UsersInput struct {
-	RoleID   *int   `form:"role_id"`
+	RoleID   *int   `form:"role_id" binding:"required"`
 	Username string `form:"username" binding:"required"`
 	Password string `form:"password" binding:"required"`
 }
