@@ -3,6 +3,7 @@ package routes
 import (
 	"github.com/aditya3232/tes-backend-dbo/app/auth"
 	"github.com/aditya3232/tes-backend-dbo/app/customers"
+	logindata "github.com/aditya3232/tes-backend-dbo/app/login_data"
 	"github.com/aditya3232/tes-backend-dbo/app/orders"
 	"github.com/aditya3232/tes-backend-dbo/app/users"
 	"github.com/aditya3232/tes-backend-dbo/connection"
@@ -22,12 +23,14 @@ func Initialize(router *gin.Engine) {
 	customersService := customers.NewService(customersRepository, usersRepository)
 	ordersService := orders.NewService(ordersRepository)
 	authService := auth.NewService(usersRepository)
+	logindataService := logindata.NewService(usersRepository)
 
 	// Initialize handlers
 	UsersController := controllers.NewUsersController(usersService)
 	CustomersController := controllers.NewCustomersController(customersService)
 	OrdersController := controllers.NewOrdersController(ordersService)
 	AuthController := controllers.NewAuthController(authService)
+	LoginDataController := controllers.NewLoginDataController(logindataService)
 
 	// Configure routes
 	api := router.Group("/api/tesbedbo/v1")
@@ -36,11 +39,13 @@ func Initialize(router *gin.Engine) {
 	customersRoutes := api.Group("/customers", middleware.AuthMiddleware(usersService))
 	ordersRoutes := api.Group("/orders", middleware.AuthMiddleware(usersService))
 	authRoutes := api.Group("/auth")
+	loginDataRoutes := api.Group("/logindata", middleware.AuthMiddleware(usersService))
 
 	configureUsersRoutes(usersRoutes, UsersController)
 	configureCustomersRoutes(customersRoutes, CustomersController)
 	configureOrdersRoutes(ordersRoutes, OrdersController)
 	configureAuthRoutes(authRoutes, AuthController)
+	configureLoginDataRoutes(loginDataRoutes, LoginDataController)
 }
 
 func configureUsersRoutes(group *gin.RouterGroup, controller *controllers.UsersController) {
@@ -70,4 +75,8 @@ func configureOrdersRoutes(group *gin.RouterGroup, controller *controllers.Order
 func configureAuthRoutes(group *gin.RouterGroup, controller *controllers.AuthController) {
 	group.POST("/login", controller.Login)
 	group.POST("/logout", controller.Logout)
+}
+
+func configureLoginDataRoutes(group *gin.RouterGroup, controller *controllers.LoginDataController) {
+	group.GET("/getlogindata", controller.GetLoginData)
 }
