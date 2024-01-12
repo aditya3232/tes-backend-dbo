@@ -1,35 +1,44 @@
 package middleware
 
-// func AuthMiddleware(usersService users_model.Service) gin.HandlerFunc {
-// 	return func(c *gin.Context) {
-// 		authHeader := c.GetHeader("Authorization")
+import (
+	"net/http"
 
-// 		userID, err := jwt.GetUserIDFromToken(authHeader)
-// 		if err != nil {
-// 			response := helper.APIResponse("Unauthorized", http.StatusUnauthorized, nil)
-// 			c.AbortWithStatusJSON(http.StatusUnauthorized, response)
-// 			return
-// 		}
+	users_app "github.com/aditya3232/tes-backend-dbo/app/users"
+	"github.com/aditya3232/tes-backend-dbo/helper"
+	"github.com/aditya3232/tes-backend-dbo/library/jwt"
+	"github.com/gin-gonic/gin"
+)
 
-// 		// var
-// 		var UsersGetOneByIdInput users_model.UsersGetOneByIdInput
-// 		UsersGetOneByIdInput.ID = userID
+func AuthMiddleware(usersService users_app.Service) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		authHeader := c.GetHeader("Authorization")
 
-// 		user, err := usersService.GetOne(UsersGetOneByIdInput)
-// 		if err != nil {
-// 			response := helper.APIResponse("Unauthorized", http.StatusUnauthorized, nil)
-// 			c.AbortWithStatusJSON(http.StatusUnauthorized, response)
-// 			return
-// 		}
+		userID, err := jwt.GetUserIDFromToken(authHeader)
+		if err != nil {
+			response := helper.APIResponse("Unauthorized", http.StatusUnauthorized, nil)
+			c.AbortWithStatusJSON(http.StatusUnauthorized, response)
+			return
+		}
 
-// 		if user.RememberToken != authHeader {
-// 			response := helper.APIResponse("Unauthorized", http.StatusUnauthorized, nil)
-// 			c.AbortWithStatusJSON(http.StatusUnauthorized, response)
-// 			return
-// 		}
+		// var
+		var UsersGetOneByIdInput users_app.UsersGetOneByIdInput
+		UsersGetOneByIdInput.ID = userID
 
-// 		c.Set("currentUser", user)
+		user, err := usersService.GetOne(UsersGetOneByIdInput)
+		if err != nil {
+			response := helper.APIResponse("Unauthorized", http.StatusUnauthorized, nil)
+			c.AbortWithStatusJSON(http.StatusUnauthorized, response)
+			return
+		}
 
-// 		c.Next()
-// 	}
-// }
+		if user.RememberToken != authHeader {
+			response := helper.APIResponse("Unauthorized", http.StatusUnauthorized, nil)
+			c.AbortWithStatusJSON(http.StatusUnauthorized, response)
+			return
+		}
+
+		c.Set("currentUser", user)
+
+		c.Next()
+	}
+}

@@ -83,3 +83,8 @@
 {"level":"error","message":"Failed to update data.[Error 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`tesbackenddbo`.`orders`, CONSTRAINT `orders_FK` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT)]/api/tesbebdo/v1/orders/update/3400127.0.0.1","timestamp":"09:52:34 12-01-2024"}
 {"level":"info","message":"Successfully updated data./api/tesbebdo/v1/orders/update/3200127.0.0.1","timestamp":"09:53:41 12-01-2024"}
 {"level":"info","message":"Successfully deleted data./api/tesbebdo/v1/orders/delete/3200127.0.0.1","timestamp":"09:54:23 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbedbo/v1/users/getdetail/6200127.0.0.1","timestamp":"10:11:21 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbedbo/v1/users/getwithpaginateandsearch200127.0.0.1","timestamp":"10:11:33 12-01-2024"}
+{"level":"info","message":"Successfully created new data./api/tesbedbo/v1/users/insert201127.0.0.1","timestamp":"10:13:57 12-01-2024"}
+{"level":"info","message":"Login success./api/tesbedbo/v1/auth/login200127.0.0.1","timestamp":"10:15:40 12-01-2024"}
+{"level":"info","message":"Data found./api/tesbedbo/v1/customers/getwithpaginateandsearch200127.0.0.1","timestamp":"10:16:14 12-01-2024"}

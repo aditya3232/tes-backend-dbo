@@ -48,4 +48,10 @@ const (
 	LoginSuccess = "Login success."
 
 	LoginFailed = "Login failed."
+
+	LogoutSuccess = "Logout success."
+
+	LogoutFailed = "Logout failed."
+
+	TokenNotValid = "Token not valid."
 )
