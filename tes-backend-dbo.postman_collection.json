@@ -1,0 +1,806 @@
+{
+	"info": {
+		"_postman_id": "96b7cc98-fef2-48c3-8558-9ebe4ec5323d",
+		"name": "tes-backend-dbo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15473973"
+	},
+	"item": [
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "getWithPaginateAndSearch",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/users/getwithpaginateandsearch?limit=10&page=1&sort=id&order=DESC&username=",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"users",
+								"getwithpaginateandsearch"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": "id"
+								},
+								{
+									"key": "order",
+									"value": "DESC"
+								},
+								{
+									"key": "username",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/users/insert",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"users",
+								"insert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "remember_token",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/users/update/13",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"users",
+								"update",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDetail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/users/getdetail/9",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"users",
+								"getdetail",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/users/delete/13",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"users",
+								"delete",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer Management",
+			"item": [
+				{
+					"name": "getWithPaginateAndSearch",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDc2MzIyMDUsInVzZXIiOnsiaWQiOjl9fQ.Bj8JrJxdZi0D_zn9LcEhAHZm7vO2RoDNbNBQBlkx1RM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/customers/getwithpaginateandsearch?limit=10&page=1&sort=id&order=DESC&user_id=&name=&email&phone&street&zip_code&city&country",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"customers",
+								"getwithpaginateandsearch"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": "id"
+								},
+								{
+									"key": "order",
+									"value": "DESC"
+								},
+								{
+									"key": "user_id",
+									"value": ""
+								},
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "email",
+									"value": null
+								},
+								{
+									"key": "phone",
+									"value": null
+								},
+								{
+									"key": "street",
+									"value": null
+								},
+								{
+									"key": "zip_code",
+									"value": null
+								},
+								{
+									"key": "city",
+									"value": null
+								},
+								{
+									"key": "country",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDc2MzIyMDUsInVzZXIiOnsiaWQiOjl9fQ.Bj8JrJxdZi0D_zn9LcEhAHZm7vO2RoDNbNBQBlkx1RM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Roy Suryo",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "roy@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "2222",
+									"type": "text"
+								},
+								{
+									"key": "street",
+									"value": "jl.kebaikan",
+									"type": "text"
+								},
+								{
+									"key": "zip_code",
+									"value": "3351",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Malang",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "Indonesia",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/customers/insert",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"customers",
+								"insert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDc2MzIyMDUsInVzZXIiOnsiaWQiOjl9fQ.Bj8JrJxdZi0D_zn9LcEhAHZm7vO2RoDNbNBQBlkx1RM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "08113600888",
+									"type": "text"
+								},
+								{
+									"key": "street",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "zip_code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/customers/update/13",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"customers",
+								"update",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDetail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDc2MzIyMDUsInVzZXIiOnsiaWQiOjl9fQ.Bj8JrJxdZi0D_zn9LcEhAHZm7vO2RoDNbNBQBlkx1RM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/customers/getdetail/9",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"customers",
+								"getdetail",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDc2MzIyMDUsInVzZXIiOnsiaWQiOjl9fQ.Bj8JrJxdZi0D_zn9LcEhAHZm7vO2RoDNbNBQBlkx1RM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/customers/delete/13",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"customers",
+								"delete",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Management",
+			"item": [
+				{
+					"name": "getWithPaginateAndSearch",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDc2MzIyMDUsInVzZXIiOnsiaWQiOjl9fQ.Bj8JrJxdZi0D_zn9LcEhAHZm7vO2RoDNbNBQBlkx1RM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/orders/getwithpaginateandsearch?limit=10&page=1&sort=id&order=DESC&customer_id&total_amount=&status&payment_type",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"orders",
+								"getwithpaginateandsearch"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": "id"
+								},
+								{
+									"key": "order",
+									"value": "DESC"
+								},
+								{
+									"key": "customer_id",
+									"value": null
+								},
+								{
+									"key": "total_amount",
+									"value": ""
+								},
+								{
+									"key": "status",
+									"value": null
+								},
+								{
+									"key": "payment_type",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDc2MzIyMDUsInVzZXIiOnsiaWQiOjl9fQ.Bj8JrJxdZi0D_zn9LcEhAHZm7vO2RoDNbNBQBlkx1RM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "customer_id",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "total_amount",
+									"value": "1500",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "success",
+									"type": "text"
+								},
+								{
+									"key": "payment_type",
+									"value": "debit card",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/orders/insert",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"orders",
+								"insert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "customer_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "total_amount",
+									"value": "3000",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "payment_type",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/orders/update/3",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"orders",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDetail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDc2MzIyMDUsInVzZXIiOnsiaWQiOjl9fQ.Bj8JrJxdZi0D_zn9LcEhAHZm7vO2RoDNbNBQBlkx1RM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/orders/getdetail/2",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"orders",
+								"getdetail",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/orders/delete/3",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"orders",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentikasi Management",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "adit",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "adit",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/auth/login",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLoginData",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDc2MjM4MjksInVzZXIiOnsiaWQiOjl9fQ.uaXT_ityjLBUjsiKH7ay8xdKNnWbx8_hOYoEGqo2PPc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/logindata/getlogindata",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"logindata",
+								"getlogindata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDc2MjM3OTcsInVzZXIiOnsiaWQiOjEwfX0.w8jQyf0nrlIirBgTSbwt-rXMk3l_fVOGb4pNJ1ykvzE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}:3636/api/tesbedbo/v1/auth/logout",
+							"host": [
+								"{{local}}"
+							],
+							"port": "3636",
+							"path": [
+								"api",
+								"tesbedbo",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "127.0.0.1"
+		}
+	]
+}
